@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Project SYSTEM "Project-5.1.dtd">
 <!-- eric project file for project Aimless -->
-<!-- Saved: 2019-03-15, 22:20:28 -->
+<!-- Saved: 2019-03-19, 20:55:17 -->
 <!-- Copyright (C) 2019 HarryZhang, realm520@gmail.com -->
 <Project version="5.1">
   <Language></Language>
@@ -15,7 +15,12 @@
   <Eol index="1"/>
   <Sources>
     <Source>__init__.py</Source>
+    <Source>main.py</Source>
+    <Source>ui/Ui_main.py</Source>
   </Sources>
+  <Forms>
+    <Form>ui/main.ui</Form>
+  </Forms>
   <Others>
     <Other>.gitignore</Other>
   </Others>
