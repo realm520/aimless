@@ -31,7 +31,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         Slot documentation goes here.
         """
         txt = self.txtRaw.toPlainText()
-        encodedStr = base64.b64encode(txt.encode('utf-8'))
+        if self.cboxCodecType.currentIndex() == 0:
+            encodedStr = base64.b64encode(txt.encode('utf-8'))
+        else:
+            encodedStr = base64.b16encode(txt.encode('utf-8'))
         self.txtResult.setPlainText(str(encodedStr,'utf-8'))
     
     @pyqtSlot()
@@ -41,7 +44,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         """
         txt = self.txtRaw.toPlainText()
         try:
-            decodedStr = base64.b64decode(txt.encode('utf-8'))
+            if self.cboxCodecType.currentIndex() == 0:
+                decodedStr = base64.b64decode(txt.encode('utf-8'))
+            else:
+                decodedStr = base64.b16decode(txt.encode('utf-8'))
         except Exception as e:
             return
         self.txtResult.setPlainText(str(decodedStr,'utf-8'))

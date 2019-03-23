@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'F:\work\code\pyqt5\ui\main.ui'
+# Form implementation generated from reading ui file 'D:\work\aimless\ui\main.ui'
 #
-# Created by: PyQt5 UI code generator 5.9
+# Created by: PyQt5 UI code generator 5.9.2
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -59,7 +59,13 @@ class Ui_MainWindow(object):
         self.btnClear.setObjectName("btnClear")
         self.horizontalLayout.addWidget(self.btnClear)
         self.cboxCodecType = QtWidgets.QComboBox(self.groupBox)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.cboxCodecType.sizePolicy().hasHeightForWidth())
+        self.cboxCodecType.setSizePolicy(sizePolicy)
         self.cboxCodecType.setObjectName("cboxCodecType")
+        self.cboxCodecType.addItem("")
         self.cboxCodecType.addItem("")
         self.horizontalLayout.addWidget(self.cboxCodecType)
         self.verticalLayout.addWidget(self.groupBox)
@@ -76,7 +82,7 @@ class Ui_MainWindow(object):
         self.gridLayout.addWidget(self.tabWidget, 0, 0, 1, 1)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 963, 23))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 963, 26))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
@@ -99,6 +105,7 @@ class Ui_MainWindow(object):
         self.btnExchange.setText(_translate("MainWindow", "exchange"))
         self.btnClear.setText(_translate("MainWindow", "clear"))
         self.cboxCodecType.setItemText(0, _translate("MainWindow", "Base64"))
+        self.cboxCodecType.setItemText(1, _translate("MainWindow", "Base16"))
         self.label_2.setText(_translate("MainWindow", "Result Text:"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), _translate("MainWindow", "Codec"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), _translate("MainWindow", "Tab 2"))

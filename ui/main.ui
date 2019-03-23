@@ -107,9 +107,20 @@
            </item>
            <item>
             <widget class="QComboBox" name="cboxCodecType">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
              <item>
               <property name="text">
                <string>Base64</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Base16</string>
               </property>
              </item>
             </widget>
@@ -144,7 +155,7 @@
      <x>0</x>
      <y>0</y>
      <width>963</width>
-     <height>23</height>
+     <height>26</height>
     </rect>
    </property>
   </widget>
