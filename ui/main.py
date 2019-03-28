@@ -11,6 +11,7 @@ from .Ui_main import Ui_MainWindow
 import base64
 import json
 import pyperclip
+import re
 
 
 class MainWindow(QMainWindow, Ui_MainWindow):
@@ -70,9 +71,13 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         Format JSON text.
         """
         jsonTxt = self.txtJson.toPlainText()
-        jsonObj = json.loads(jsonTxt)
-        prettyJsonTxt = json.dumps(jsonObj,  indent=4)
-        self.txtJson.setPlainText(prettyJsonTxt)
+        try:
+            jsonObj = json.loads(jsonTxt)
+        except:
+            pass
+        else:
+            prettyJsonTxt = json.dumps(jsonObj,  indent=4)
+            self.txtJson.setPlainText(prettyJsonTxt)
     
     @pyqtSlot()
     def on_btnJsonClear_clicked(self):
@@ -87,3 +92,12 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         Copy JSON text to ClipBoard.
         """
         pyperclip.copy(self.txtJson.toPlainText())
+    
+    @pyqtSlot()
+    def on_btnJsonCompress_clicked(self):
+        """
+        Compress JSON text.
+        """
+        jsonTxt = self.txtJson.toPlainText()
+        jsonTxt = jsonTxt.replace(' ',  '').replace('\r',  '').replace('\n',  '')
+        self.txtJson.setPlainText(jsonTxt)
