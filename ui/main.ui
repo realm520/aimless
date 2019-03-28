@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>963</width>
-    <height>793</height>
+    <height>727</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -74,21 +74,21 @@
            <item>
             <widget class="QPushButton" name="btnEncoding">
              <property name="text">
-              <string>encoding</string>
+              <string>Encoding</string>
              </property>
             </widget>
            </item>
            <item>
             <widget class="QPushButton" name="btnDecoding">
              <property name="text">
-              <string>decoding</string>
+              <string>Decoding</string>
              </property>
             </widget>
            </item>
            <item>
             <widget class="QPushButton" name="btnExchange">
              <property name="text">
-              <string>exchange</string>
+              <string>Exchange</string>
              </property>
             </widget>
            </item>
@@ -101,7 +101,7 @@
               </sizepolicy>
              </property>
              <property name="text">
-              <string>clear</string>
+              <string>Clear</string>
              </property>
             </widget>
            </item>
@@ -131,8 +131,70 @@
       </widget>
       <widget class="QWidget" name="tab_2">
        <attribute name="title">
-        <string>Tab 2</string>
+        <string>Json</string>
        </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <widget class="QTextEdit" name="txtJson"/>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="groupBox_2">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="title">
+           <string>Operation</string>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout_2">
+           <item>
+            <widget class="QPushButton" name="btnJsonFormat">
+             <property name="text">
+              <string>Format</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="btnJsonCompress">
+             <property name="text">
+              <string>Compress</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="btnJsonEscape">
+             <property name="text">
+              <string>Escape</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="btnJsonDeescape">
+             <property name="text">
+              <string>De-Escape</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="btnJsonCopy">
+             <property name="text">
+              <string>Copy</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="btnJsonClear">
+             <property name="text">
+              <string>Clear</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
       </widget>
      </widget>
     </item>

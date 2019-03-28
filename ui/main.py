@@ -9,6 +9,8 @@ from PyQt5.QtWidgets import QMainWindow
 
 from .Ui_main import Ui_MainWindow
 import base64
+import json
+import pyperclip
 
 
 class MainWindow(QMainWindow, Ui_MainWindow):
@@ -48,7 +50,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 decodedStr = base64.b64decode(txt.encode('utf-8'))
             else:
                 decodedStr = base64.b16decode(txt.encode('utf-8'))
-        except Exception as e:
+        except:
             return
         self.txtResult.setPlainText(str(decodedStr,'utf-8'))
     
@@ -61,3 +63,27 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         strResult = self.txtResult.toPlainText()
         self.txtRaw.setPlainText(strResult)
         self.txtResult.setPlainText(strRaw)
+    
+    @pyqtSlot()
+    def on_btnJsonFormat_clicked(self):
+        """
+        Format JSON text.
+        """
+        jsonTxt = self.txtJson.toPlainText()
+        jsonObj = json.loads(jsonTxt)
+        prettyJsonTxt = json.dumps(jsonObj,  indent=4)
+        self.txtJson.setPlainText(prettyJsonTxt)
+    
+    @pyqtSlot()
+    def on_btnJsonClear_clicked(self):
+        """
+        Clear text.
+        """
+        self.txtJson.setPlainText("")
+    
+    @pyqtSlot()
+    def on_btnJsonCopy_clicked(self):
+        """
+        Copy JSON text to ClipBoard.
+        """
+        pyperclip.copy(self.txtJson.toPlainText())
